@@ -3,21 +3,24 @@ import java.util.*;
 public class PrimeNumber {
 	public static void main(String[] args) {
 		Scanner sc= new Scanner(System.in);
-		System.out.println("enter number");
-		int Num= sc.nextInt();
-		int count =0;
-		for(int i=1;i<=Num;i++) {
-			if(Num%i==0) {
-				count++;
-				
+		System.out.println("enter Starting range");
+		int LowerRange = sc.nextInt();
+		System.out.println("enter end");
+		int HIgherRange = sc.nextInt();
+		
+		for(int i= LowerRange;i<=HIgherRange;i++) {
+			int count=0;
+			for(int j=1; j<=i;  j++) {
+				if (i%j==0) {
+					count++;
+				}
 			}
-		}
-		if(count==2) {
-			System.out.println(Num+" is prime number");
-		}
-		else
-			System.out.println(Num+" is not prime number");
+			if(count==2) {
+				System.out.print(i+" ");  
+		
+			}
+			
+	    }
 		
 	}
-
 }

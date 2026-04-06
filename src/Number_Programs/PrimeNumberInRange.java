@@ -12,7 +12,7 @@ public class PrimeNumberInRange {
 		int HigherRange =sc.nextInt();
 		for (int i=LowerRange;i<=HigherRange;i++) {
 			int count=0;
-			for(int j=01;j<=i;j++) {
+			for(int j=1;j<=i;j++) {
 				if(i%j==0) {
 					count++;
 				}
