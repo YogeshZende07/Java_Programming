@@ -6,9 +6,9 @@ public class PrimeNumber {
 		System.out.println("enter Starting range");
 		int LowerRange = sc.nextInt();
 		System.out.println("enter end");
-		int HIgherRange = sc.nextInt();
+		int HigherRange = sc.nextInt();
 		
-		for(int i= LowerRange;i<=HIgherRange;i++) {
+		for(int i= LowerRange;i<=HigherRange;i++) {
 			int count=0;
 			for(int j=1; j<=i;  j++) {
 				if (i%j==0) {
