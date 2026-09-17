@@ -2,53 +2,26 @@ package Number_Programs;
 
 import java.util.*;
 
-import Array_Programs.LinearSearch;
-
 public class Practise {
-	public static void main(String[]args) {
-		Scanner sc= new Scanner (System.in);
-		System.out.println("Enter size");
-		int size=sc.nextInt();
-		
-		int arr[]= new int[size];
-		System.out.println("Enter "+arr.length+" values to store into an array");
+	public static int[]twoSum(int[]arr,int target){
+		HashMap<Integer,Integer> map=new HashMap<>();
 		for(int i=0;i<arr.length;i++) {
-			arr[i]=sc.nextInt();
+			int neededVal=target-arr[i];
+			if(map.containsKey(neededVal)) {
+				return new int[] {map.get(neededVal),i};
+			}
+			map.put(arr[i], i);
 		}
-		System.out.println("orginal Array:");
-		for(int num:arr) {
-			System.out.print(num+" ");
-		}
-		System.out.println();
-		bubbleSort(arr);
-	
+		return new int[] {};
 	}
-	
-	public static void bubbleSort(int[]arr) {
-		if(arr==null || arr.length<=1) {
-			System.out.println("atleast 2 element should present");
-			return;
+	public static void main(String[]args) {
+		int []arr= {1,2,3,4,56,7,62,8,6,55,4,3,2};
+		int target=63;
+		int []result=twoSum(arr,target);
+		if(result.length==0) {
+			System.out.println("target not present in array");
 		}
-		int n=arr.length-1;
-		boolean swapped;
-		for(int i=0;i<=n;i++) {
-			swapped=false;
-			for(int j=0;j<n-i;j++) {
-				if(arr[j]>arr[j+1]) {
-					int temp= arr[j];
-					arr[j]=arr[j+1];
-					arr[j+1]=temp;
-					swapped=true;
-				}
-			}
-			if(!swapped) {
-				break;
-			}
-		}
-		System.out.println("Sorted Array:");
-		for(int num:arr) {
-			System.out.print(num+" ");
-		}
-		
+		else
+		System.out.println("by adding index number "+Arrays.toString(result)+"we get Addition as "+target);
 	}
 }

@@ -15,7 +15,8 @@ public class RemoveDupliccate {
 		int[]arr= {1,2,2,1,2,2,1,2,1,2,2,3,1,4,2,21};
 
 		RemoveDupliccate rd=new RemoveDupliccate();
-		System.out.println();rd.sort(arr);
+		System.out.println();
+		rd.sort(arr);
 		System.out.println();
 		int uniqueLength=rd.removeDuplicate(arr);
 		for( int i=0;i<uniqueLength;i++) {
