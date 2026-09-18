@@ -37,7 +37,8 @@ public class MaxofSubArray {
 //		for(int i=0;i<arr.length;i++) {
 //			arr[i]=sc.nextInt();
 //		}
-		int []arr= {1,2,3,-6,4,4,-7,8};
+//		System.out.println(sumofSubArray(arr));
+		int []arr= {1,2,3,4,4,-7,8};
 		System.out.println("maximum addition of all element is "+sumofSubArray(arr));
 		System.out.print("maximum addition of all element is "+sumOfMaxSubArray(arr));
 	}

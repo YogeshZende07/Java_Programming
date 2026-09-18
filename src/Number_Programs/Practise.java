@@ -3,25 +3,39 @@ package Number_Programs;
 import java.util.*;
 
 public class Practise {
-	public static int[]twoSum(int[]arr,int target){
-		HashMap<Integer,Integer> map=new HashMap<>();
-		for(int i=0;i<arr.length;i++) {
-			int neededVal=target-arr[i];
-			if(map.containsKey(neededVal)) {
-				return new int[] {map.get(neededVal),i};
+	public static  int[]merged(int[]arr1, int []arr2){
+		int n1=arr1.length;
+		int n2=arr2.length;
+		int[]merged=new int[n1+n2];
+		int i=0,j=0,k=0;
+		while(i<n1 && j<n2) {
+			if(arr1[i]<arr2[j]) {
+				merged[k]=arr1[i];
+				i++;
 			}
-			map.put(arr[i], i);
+			else {
+				merged[k]=arr2[j];
+				j++;
+			}
+			k++;
 		}
-		return new int[] {};
+		while(i<n1) {
+			merged[k]=arr1[i];
+			i++;
+			k++;
+		}
+		while(j<n2) {
+			merged[k]=arr2[j];
+			j++;
+			k++;
+		}
+		return merged;
 	}
 	public static void main(String[]args) {
-		int []arr= {1,2,3,4,56,7,62,8,6,55,4,3,2};
-		int target=63;
-		int []result=twoSum(arr,target);
-		if(result.length==0) {
-			System.out.println("target not present in array");
-		}
-		else
-		System.out.println("by adding index number "+Arrays.toString(result)+"we get Addition as "+target);
+		int[]arr1= {1,2,3,8,9,10};
+		int[]arr2= {4,5,6,13,14,12,11};
+		int[]result=merged(arr1,arr2);
+		Arrays.sort(result);
+		System.out.println("merged array: "+Arrays.toString(result));
 	}
 }
